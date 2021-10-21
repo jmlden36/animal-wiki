@@ -1,3 +1,30 @@
+function displayInfo(selection) {
+  $(".startHidden").hide();
+  if(selection === "harpyEagle"){
+    $("#harpyEagleCard").toggle();
+    $("#harpyEagleTitle").toggle();
+    $("#harpyEagleImg").toggle();
+    $("#harpyEagleText").toggle();
+  } else if(selection === "jellyfish"){
+    $("#jellyfishCard").toggle();
+    $("#jellyfishTitle").toggle();
+    $("#jellyfishImg").toggle();
+    $("#jellyfishText").toggle();
+  } else if(selection === "tardigrade"){
+    $("#tardigradeCard").toggle();
+    $("#tardigradeTitle").toggle();
+    $("#tardigradeImg").toggle();
+    $("#tardigradeText").toggle();
+  } else if(selection === "elephant"){
+    $("#elephantCard").toggle();
+    $("#elephantTitle").toggle();
+    $("#elephantImg").toggle();
+    $("#elephantText").toggle();
+  } else {
+    alert("BAD");
+  }
+}
+
 $(document).ready(function() {
   // $(".harpyEagle").click(function() {
   //   $("#harpyEagleImg").toggle();
@@ -15,6 +42,11 @@ $(document).ready(function() {
   //   $("#elephantImg").toggle();
   //   $("#elephantText").toggle();
   // })
+  $("#formOne").submit(function(event){
+    event.preventDefault();
+    const selection = $("#animalPick").val();
+    displayInfo(selection);
+  });
+
 });
 
-"<p class ='card-text outputText'>" + selectedText + "</p>"
